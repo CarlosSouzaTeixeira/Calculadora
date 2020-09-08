@@ -269,6 +269,7 @@ public class calculadora extends JFrame {
 		});
 		btnIgual.addMouseListener(new MouseAdapter() {
 			@Override
+			//operacoes
 			public void mouseClicked(MouseEvent e) {
 				String resposta;
 				valor2 = Double.parseDouble(txtCalculos.getText());
