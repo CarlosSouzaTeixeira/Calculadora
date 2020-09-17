@@ -18,7 +18,6 @@ public class calculadora {
 	double valor1, valor2, resultado;
 	String operacao, resposta;
 	
-
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -37,8 +36,28 @@ public class calculadora {
 	public calculadora() {
 		initialize();
 	}
-
 	
+	
+public void soma() {
+	txtTela.setText(String.valueOf(valor1+valor2));
+}
+
+
+public void subt() {
+	txtTela.setText(String.valueOf(valor1-valor2));	
+}
+	
+public void div() {
+	txtTela.setText(String.valueOf(valor1/valor2));
+	
+}
+
+
+public void mult() {
+	txtTela.setText(String.valueOf(valor1*valor2));	
+}
+
+
 	private void initialize() {
 		frmCalculadora = new JFrame();
 		frmCalculadora.setTitle("Calculadora");
@@ -119,34 +138,26 @@ public class calculadora {
 		btnresult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String resposta;
 				valor2 = Double.parseDouble(txtTela.getText());
 				if (operacao =="+")
 				{
-					resultado=valor1+valor2;
-					resposta = String.format("%.2f",resultado);
-					txtTela.setText(resposta);					
+							
+					soma();
 				}
-				else if (operacao =="-")
+				 if (operacao =="-")
 				{
-					resultado = valor1 - valor2;
-					resposta = String.format("%.2f",resultado);
-					txtTela.setText(resposta);
+					 subt();
 				}
-				else if (operacao =="*")
+				 if (operacao =="*")
 				{
-					resultado=valor1 * valor2;
-					resposta = String.format("%.2f",resultado);
-					txtTela.setText(resposta);
+					 mult();
 				}
-				else if (operacao =="/")
+				 if (operacao =="/")
 				{
-					resultado=valor1 / valor2;
-					resposta = String.format("%.2f",resultado);
-					txtTela.setText(resposta);
+					
+					 div();
 				}
-				
-				
+				 	
 			}
 		});
 		btnresult.setFont(new Font("Arial", Font.BOLD, 16));
